@@ -1,0 +1,60 @@
+﻿@model IEnumerable<StoredProcedure.Models.tblProduct>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Welcome to The Store!!</h2>
+
+<p>
+    @Html.ActionLink("Add New Product", "Create",null,new { @class="btn btn-danger"})
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductId)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblCategory.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductId)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tblCategory.CategoryName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Quantity)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Update", new {  id =item.ProductId }) |
+        @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
+    </td>
+</tr>
+}
+
+</table>

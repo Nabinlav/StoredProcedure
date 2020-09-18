@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StudentDBModelStoreContainer" CdmEntityContainer="StudentDBEntities">
+    <EntitySetMapping Name="tblCategories">
+      <EntityTypeMapping TypeName="StudentDBModel.tblCategory">
+        <MappingFragment StoreEntitySet="tblCategory">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProducts">
+      <EntityTypeMapping TypeName="StudentDBModel.tblProduct">
+        <MappingFragment StoreEntitySet="tblProduct">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddProduct" FunctionName="StudentDBModel.Store.AddProduct" />
+    <FunctionImportMapping FunctionImportName="DeleteProduct" FunctionName="StudentDBModel.Store.DeleteProduct" />
+    <FunctionImportMapping FunctionImportName="ListAllProduct" FunctionName="StudentDBModel.Store.ListAllProduct" />
+    <FunctionImportMapping FunctionImportName="ListProductByID" FunctionName="StudentDBModel.Store.ListProductByID" />
+    <FunctionImportMapping FunctionImportName="UpdateProduct" FunctionName="StudentDBModel.Store.UpdateProduct" />
+  </EntityContainerMapping>
+</Mapping>
